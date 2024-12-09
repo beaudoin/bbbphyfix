@@ -4,7 +4,7 @@
 DIR=$(mktemp -d -t bbbrtc.XXXXXX) || exit 1
 echo "tmpdir = $DIR"
 pushd "$DIR"
-git clone https://github.com/bigjosh/bbbrtc
+git clone https://github.com/beaudoin/bbbrtc
 cd bbbrtc
 make
 popd
@@ -14,7 +14,7 @@ rm -r $DIR
 DIR=$(mktemp -d -t bbbrtc.XXXXXX) || exit 1
 echo "tmpdir = $DIR"
 pushd "$DIR"
-git clone https://github.com/bigjosh/phyreg
+git clone https://github.com/beaudoin/phyreg
 cd phyreg
 make clean
 make

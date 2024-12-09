@@ -8,9 +8,12 @@ https://wp.josh.com/2018/06/04/a-software-only-solution-to-the-vexing-beagle-bon
 ### Install
 
 
+Use modified repo that fixes the timezone issue (replaced mktime with timegm)
+
 ```
 rm -r bbbphyfix/
-git clone https://github.com/bigjosh/bbbphyfix
+#git clone https://github.com/bigjosh/bbbphyfix
+git clone https://github.com/beaudoin/bbbphyfix
 cd bbbphyfix/
 ./install
 sync
