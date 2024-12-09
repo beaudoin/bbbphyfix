@@ -1,0 +1,38 @@
+#! /bin/sh
+
+### BEGIN INIT INFO
+# Provides:          chkphy
+# Required-Start:
+# Required-Stop:
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Check BBB phy on boot and repower if PHY failed
+# Description:       This file should be used to construct scripts to be
+#                    placed in /etc/init.d.  This example start a
+#                    single forking daemon capable of writing a pid
+#                    file.  To get other behavoirs, implemend
+#                    do_start(), do_stop() or other functions to
+#                    override the defaults in /lib/init/init-d-script.
+### END INIT INFO
+
+case "$1" in
+  start)
+  /usr/sbin/bbb-check-phy | /usr/bin/tee /dev/console >/dev/kmsg
+
+  ;;
+  stop)
+  echo "No stop action"
+  ;;
+  restart)
+  echo "No restart action"
+  ;;
+  status)
+  echo "No status action"
+  ;;
+  *)
+  echo "Usage: $0 start"
+  exit 1
+  ;;
+esac
+
+exit 0
